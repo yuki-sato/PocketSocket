@@ -531,7 +531,7 @@
     _closeCode = code;
     _closeReason = reason;
     if(_readyState == PSWebSocketReadyStateOpen) {
-        [self closeWithCode:1000 reason:nil];
+        [self closeWithCode:code reason:nil];
     }
     [self executeWork:^{
         [self disconnectGracefully];
