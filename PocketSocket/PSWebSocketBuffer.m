@@ -33,6 +33,9 @@
 }
 
 #pragma mark - Actions
+- (BOOL)hasBytesIncludeSendings {
+    return _data.length > 0;
+}
 
 - (BOOL)hasBytesAvailable {
     return _data.length > _offset;

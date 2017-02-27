@@ -24,6 +24,7 @@
 
 #pragma mark - Actions
 
+- (BOOL)hasBytesIncludeSendings;
 - (BOOL)hasBytesAvailable;
 - (NSUInteger)bytesAvailable;
 - (void)appendData:(NSData *)data;

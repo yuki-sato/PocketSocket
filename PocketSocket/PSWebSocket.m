@@ -25,8 +25,6 @@
     NSMutableURLRequest *_request;
     dispatch_queue_t _workQueue;
     PSWebSocketDriver *_driver;
-    PSWebSocketBuffer *_inputBuffer;
-    PSWebSocketBuffer *_outputBuffer;
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
     PSWebSocketReadyState _readyState;
