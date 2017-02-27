@@ -25,6 +25,8 @@
     NSMutableURLRequest *_request;
     dispatch_queue_t _workQueue;
     PSWebSocketDriver *_driver;
+    PSWebSocketBuffer *_inputBuffer;
+    PSWebSocketBuffer *_outputBuffer;
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
     PSWebSocketReadyState _readyState;
@@ -239,6 +241,9 @@
         }
         [_driver sendPing:pingData];
     }];
+}
+- (BOOL)hasDatasToSend {
+    return [_outputBuffer hasBytesIncludeSendings];
 }
 - (void)close {
     [self closeWithCode:1000 reason:nil];

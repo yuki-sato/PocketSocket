@@ -64,9 +64,6 @@ typedef NS_ENUM(NSInteger, PSWebSocketReadyState) {
 @property (nonatomic, weak) id <PSWebSocketDelegate> delegate;
 @property (nonatomic, strong) dispatch_queue_t delegateQueue;
 
-@property (nonatomic, strong) PSWebSocketBuffer *inputBuffer;
-@property (nonatomic, strong) PSWebSocketBuffer *outputBuffer;
-
 @property (nonatomic, assign, getter=isInputPaused) BOOL inputPaused;
 @property (nonatomic, assign, getter=isOutputPaused) BOOL outputPaused;
 
@@ -119,6 +116,8 @@ typedef NS_ENUM(NSInteger, PSWebSocketReadyState) {
  */
 - (void)ping:(NSData *)pingData handler:(void (^)(NSData *pongData))handler;
 
+
+- (BOOL)hasDatasToSend;
 
 /**
  *  Close the websocket will default to code 1000 and nil reason
